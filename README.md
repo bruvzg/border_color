@@ -1,0 +1,1 @@
+# gd_border_color
