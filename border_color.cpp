@@ -6,7 +6,7 @@
 
 #if defined(TOOLS_ENABLED)
 
-#include "core/project_settings.h"
+#include "core/config/project_settings.h"
 #include "editor/editor_node.h"
 #include "editor/editor_settings.h"
 
@@ -32,7 +32,7 @@ protected:
 					_set_title_color(base_color);
 #endif
 					Ref<StyleBoxFlat> style;
-					style.instance();
+					style.instantiate();
 					style->set_bg_color(base_color);
 					editor_node->get_gui_base()->add_theme_style_override("panel", style);
 				} else {
