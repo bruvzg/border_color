@@ -2,5 +2,12 @@
 /*  register_types.h                                                     */
 /*************************************************************************/
 
-void register_border_color_types();
-void unregister_border_color_types();
+#ifndef BORDER_COLOR_REGISTER_TYPES_H
+#define BORDER_COLOR_REGISTER_TYPES_H
+
+#include "modules/register_module_types.h"
+
+void initialize_border_color_module(ModuleInitializationLevel p_level);
+void uninitialize_border_color_module(ModuleInitializationLevel p_level);
+
+#endif // BORDER_COLOR_REGISTER_TYPES_H

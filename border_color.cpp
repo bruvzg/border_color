@@ -67,10 +67,13 @@ static void _editor_init() {
 
 #endif
 
-void register_border_color_types() {
+void initialize_border_color_module(ModuleInitializationLevel p_level) {
 #if defined(TOOLS_ENABLED)
+if (p_level == MODULE_INITIALIZATION_LEVEL_EDITOR) {
 	EditorNode::add_init_callback(_editor_init);
+}
 #endif
 }
 
-void unregister_border_color_types() {}
+void uninitialize_border_color_module(ModuleInitializationLevel p_level) {
+}
