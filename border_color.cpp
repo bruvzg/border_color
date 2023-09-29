@@ -9,8 +9,9 @@
 #include "core/config/project_settings.h"
 #include "editor/editor_node.h"
 #include "editor/editor_settings.h"
+#include "scene/resources/style_box_flat.h"
 
-#if defined(OSX_ENABLED)
+#if defined(MACOS_ENABLED)
 extern "C" void _set_title_color(const Color &p_color);
 extern "C" void _unset_title_color();
 #endif
@@ -28,7 +29,7 @@ protected:
 			if (editor_color != base_color) {
 				editor_color = base_color;
 				if (editor_color != Color()) {
-#if defined(OSX_ENABLED)
+#if defined(MACOS_ENABLED)
 					_set_title_color(base_color);
 #endif
 					Ref<StyleBoxFlat> style;
@@ -36,7 +37,7 @@ protected:
 					style->set_bg_color(base_color);
 					editor_node->get_gui_base()->add_theme_style_override("panel", style);
 				} else {
-#if defined(OSX_ENABLED)
+#if defined(MACOS_ENABLED)
 					_unset_title_color();
 #endif
 					editor_node->get_gui_base()->add_theme_style_override("panel", Ref<StyleBox>());

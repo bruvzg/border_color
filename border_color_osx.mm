@@ -4,7 +4,7 @@
 
 #if defined(TOOLS_ENABLED)
 
-#include "platform/osx/display_server_osx.h"
+#include "platform/macos/display_server_macos.h"
 
 extern "C" void _set_title_color(const Color &p_color) {
 	NSWindow *window = (__bridge NSWindow *)(void *)DisplayServer::get_singleton()->window_get_native_handle(DisplayServer::WINDOW_HANDLE, DisplayServer::MAIN_WINDOW_ID);
